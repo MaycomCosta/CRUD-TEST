@@ -15,21 +15,26 @@ export const SingUp = () => {
     setInputValue(event.target.value)
   }
 
-  const handleClick = () => {
+  // const handleClick = () => {
 
-    setInputValue(inputValue)
-    setTimeout(() => {
-      history.push('/')
-    }, 1000)
-  }
+  //   setInputValue(inputValue)
+  //   setTimeout(() => {
+  //     history.push('/')
+  //   }, 1000)
+  // }
 
   const onSubmit = clientData => {
     try {
+        if(clientData.name === ''){
+          toast.error('Please enter a username')
+        }else{
+          localStorage.setItem('AppInfo:username', JSON.stringify(clientData.name))
 
-      localStorage.setItem('AppInfo:username', JSON.stringify(clientData.name))
-
-      console.log(clientData.name)
-      
+          setInputValue(inputValue)
+          setTimeout(() => {
+            history.push('/')
+          }, 1000)
+        }
     } catch (err) {
       toast.error('Error in the sistem')
     }
@@ -40,7 +45,7 @@ export const SingUp = () => {
   return (
     <C.Container>
       <C.ContainerRegister>
-        <form onSubmit={handleSubmit(onSubmit)} onKeyDown={(e) => e.key === 'Enter' && handleSubmit(e)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
         <h3>Welcome to CodeLeap network!</h3>
         <p>Please enter your username</p>
         <input
@@ -49,7 +54,7 @@ export const SingUp = () => {
           type="text" value={inputValue} 
           onChange={handleInputChange}
         />
-        <C.Button onClick={handleClick} disabled={!inputValue}>ENTER</C.Button>
+        <C.Button disabled={!inputValue}>ENTER</C.Button>
         </form>
       </C.ContainerRegister>
     </C.Container>
