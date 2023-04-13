@@ -20,7 +20,6 @@ const EditItemModal = ({isOpen, closeModal, item}) => {
   const handleSubmit = (e) => {
     e.preventDefault()
     handleEditItem(editedItem)
-    closeModal()
   }
 
   const handleEditItem = async (editedItem) => {
@@ -28,16 +27,19 @@ const EditItemModal = ({isOpen, closeModal, item}) => {
       const { status } = await axios.patch(`https://dev.codeleap.co.uk/careers/${item.id}/`, {
         "title": editedItem.title,
         "content": editedItem.content
-      })
+      },
+      { validateStatus: () => true }
+      )
       if (status === 201 || status === 200) {
         toast.success('Post edited')
-      } else {
-        throw new Error()
+        closeModal()
+      } else if (status === 400) {
+        toast.error(`Title and content are required`)
       }
     } catch (err) {
       toast.error('Error in the sistem')
+      closeModal()
     }
-    closeModal()
   }
 
   return (
