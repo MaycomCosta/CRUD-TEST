@@ -11,6 +11,10 @@ export const Container = styled.div`
  height: 100%;
 
  background-color: #ffffff;
+
+ @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
 `
 
 export const Posts = styled.div`
@@ -24,13 +28,17 @@ export const Posts = styled.div`
 
  background-color: #ffffff;
 
+ @media screen and (max-width: 768px) {
+    max-width: 100%;
+  }
+
  .postHeader {
    margin: 0;
 
    background: #7695EC;
    color: #ffffff;
    font-weight: 700;
-   font-size: 22px; 
+   font-size: 22px;
 
    width: 100%;
    height: 3em;
@@ -44,10 +52,24 @@ export const Posts = styled.div`
    div {
     display: flex;
     gap: 1em;
+
+    .postContent{
+      font-size: 16px;
+      line-height: 1.4;
+
+      @media screen and (max-width: 768px) {
+        font-size: 14px;
+      }
+    }
    }
 
    .postTitle {
+    font-size: 24px;
+    line-height: 1.2;
 
+    @media screen and (max-width: 768px) {
+      font-size: 20px;
+    }
   }
 
   .icons {
@@ -78,10 +100,18 @@ export const Posts = styled.div`
     color: #777777;
     padding-bottom: 15px;
     font-weight: 700;
+
+    @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
    }
 
    .timeAgo {
     color: #777777;
+
+    @media screen and (max-width: 768px) {
+    font-size: 10px;
+  }
    }
  }
  }

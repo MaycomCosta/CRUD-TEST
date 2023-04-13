@@ -15,8 +15,8 @@ export const Home = () => {
   const [username, setUsername] = useState({})
 
   useEffect(() => {
-    const loadData = async () => {
-      const clientInfo = await localStorage.getItem('AppInfo:username')
+    const loadData = () => {
+      const clientInfo = localStorage.getItem('AppInfo:username')
   
       if (clientInfo) {
         const name = JSON.parse(clientInfo)
@@ -34,10 +34,15 @@ export const Home = () => {
         "username": username,
         "title": clientData.TitlePost,
         "content": clientData.ContentPost
-      })
+      },
+      { validateStatus: () => true }
+      )
       if (status === 201 || status === 200) {
         toast.success('Post sent!')
-      } else {
+      } else if (status === 400) {
+        toast.error(`Title and content are required`)
+      }
+       else {
         throw new Error()
       }
       console.log(status)

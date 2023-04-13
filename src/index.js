@@ -12,6 +12,6 @@ root.render(
   <>
     <Routes />
     <GlobalStyle/>
-    <ToastContainer autoClose={2000} theme="colored" />
+    <ToastContainer autoClose={1000} theme="colored" />
   </>
 )

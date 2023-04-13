@@ -30,15 +30,13 @@ const EditItemModal = ({isOpen, closeModal, item}) => {
         "content": editedItem.content
       })
       if (status === 201 || status === 200) {
-        toast.success('Post sent!')
+        toast.success('Post edited')
       } else {
         throw new Error()
       }
-      console.log(status)
     } catch (err) {
       toast.error('Error in the sistem')
     }
-    console.log(item)
     closeModal()
   }
 

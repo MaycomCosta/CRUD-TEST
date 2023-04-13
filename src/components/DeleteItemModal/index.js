@@ -1,16 +1,22 @@
 import React from 'react';
 import axios from "axios"
 import * as C from './styles'
-
+import { toast } from 'react-toastify'
 
 const DeleteItemModal = ({isOpen, closeModal, item}) => {
 
   const  handleDelete = async (item) => {
-    // Lógica para excluir o item selecionado
-    console.log(item)
-   const response =  await axios.delete(`https://dev.codeleap.co.uk/careers/${item}/`)
-   console.log(response)
-   closeModal()
+    try {
+      const { status } = await axios.delete(`https://dev.codeleap.co.uk/careers/${item}/`, { validateStatus: () => true })
+      closeModal()
+      if (status === 204) {
+        toast.success('Post deleted')
+      }else {
+        throw new Error()
+      }
+    } catch (err) {
+      toast.error('Error in the sistem')
+    }
   }
 
   return (

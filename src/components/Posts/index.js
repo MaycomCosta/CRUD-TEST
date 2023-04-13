@@ -59,7 +59,7 @@ export const Posts = ({ username }) => {
         return (
           <C.Posts key={post.id}>
             <div className='postHeader'>
-            <h3 className='postTitle'>{post.title}</h3>
+            <h3 className='postTitle' >{post.title.length > 30 ? post.title.slice(0, 50) + "..." : post.title}</h3>
             {post.username === username && (
               <div>
                 <button className='icons' onClick={() => handleDeletePost(post.id)}><FaTrashAlt /></button>
