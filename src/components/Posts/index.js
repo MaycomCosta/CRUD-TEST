@@ -42,14 +42,12 @@ export const Posts = ({ username }) => {
 
   const handleDeletePost = (postId) => {
     setSelectedItem(postId);
-    console.log(postId)
     setDeleteModalIsOpen(true);
   };
   
   const handleEditPost = (post) => {
     setSelectedItem(post);
     setEditModalIsOpen(true);
-    console.log(post.id)
   };
   
 

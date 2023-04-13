@@ -26,7 +26,6 @@ export const Home = () => {
     loadData()
   },[])
   
-  console.log(username)
   const onSubmit = async clientData => {
 
     try {
@@ -45,7 +44,6 @@ export const Home = () => {
        else {
         throw new Error()
       }
-      console.log(status)
     } catch (err) {
       toast.error('Error in the sistem')
     }
