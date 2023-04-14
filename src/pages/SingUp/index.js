@@ -8,20 +8,13 @@ import { toast } from 'react-toastify'
 
 export const SingUp = () => {
   const [inputValue, setInputValue] = useState('')
+  const { register, handleSubmit } = useForm()
 
   const history = useHistory()
 
   const handleInputChange = event => {
     setInputValue(event.target.value)
   }
-
-  // const handleClick = () => {
-
-  //   setInputValue(inputValue)
-  //   setTimeout(() => {
-  //     history.push('/')
-  //   }, 1000)
-  // }
 
   const onSubmit = clientData => {
     try {
@@ -39,8 +32,6 @@ export const SingUp = () => {
       toast.error('Error in the sistem')
     }
   }
-
-  const { register, handleSubmit } = useForm()
 
   return (
     <C.Container>

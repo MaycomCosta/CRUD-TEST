@@ -13,6 +13,18 @@ const baseURL = "https://dev.codeleap.co.uk/careers/"
 export const Home = () => {
   const { register, handleSubmit, reset } = useForm()
   const [username, setUsername] = useState({})
+  const [inputValueTitle, setInputValueTitle] = useState('')
+  const [inputValueContent, setInputValueContent] = useState('')
+
+
+  const handleInputChangeTitle = event => {
+    setInputValueTitle(event.target.value)
+    setInputValueContent(event.target.value)
+  }
+  const handleInputChangeContent = event => {
+    setInputValueTitle(event.target.value)
+    setInputValueContent(event.target.value)
+  }
 
   useEffect(() => {
     const loadData = () => {
@@ -61,20 +73,24 @@ export const Home = () => {
         <h3>What's on your mind?</h3>
         <label>Title</label>
         <input
-        autocomplete="off"
+        autoComplete="off"
         placeholder='Hello world'
-        {...register("TitlePost")}/>
+        {...register("TitlePost")}
+        onChange={handleInputChangeTitle}
+        />
         <label>Content</label>
         <input
-        autocomplete="off"
+        autoComplete="off"
         className='inputContent' 
         placeholder='Content here' 
-        {...register("ContentPost")}/>
-        <C.Button>Create</C.Button>
+        {...register("ContentPost")}
+        onChange={handleInputChangeContent}
+        />
+        <C.Button disabled={!inputValueTitle || !inputValueContent}>Create</C.Button>
         </C.Form>
       </C.ContainerPost>
       <Posts username={username}/>
       </C.ContainerSocial>
     </C.Container>
-  )
+  ) 
 }
