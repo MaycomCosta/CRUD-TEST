@@ -13,9 +13,9 @@ const baseURL = "https://dev.codeleap.co.uk/careers/?limit=1000&sort=-created_da
 
 export const Posts = ({ username }) => {
   const [post, setPost] = useState(null)
-  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false);
-  const [editModalIsOpen, setEditModalIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState({});
+  const [deleteModalIsOpen, setDeleteModalIsOpen] = useState(false)
+  const [editModalIsOpen, setEditModalIsOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState({})
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -41,14 +41,14 @@ export const Posts = ({ username }) => {
   }
 
   const handleDeletePost = (postId) => {
-    setSelectedItem(postId);
-    setDeleteModalIsOpen(true);
-  };
+    setSelectedItem(postId)
+    setDeleteModalIsOpen(true)
+  }
   
   const handleEditPost = (post) => {
-    setSelectedItem(post);
-    setEditModalIsOpen(true);
-  };
+    setSelectedItem(post)
+    setEditModalIsOpen(true)
+  }
   
 
   return (

@@ -28,6 +28,8 @@ export const Posts = styled.div`
 
  background-color: #ffffff;
 
+ word-wrap: break-word;
+
  @media screen and (max-width: 768px) {
     max-width: 100%;
   }
