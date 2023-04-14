@@ -99,8 +99,8 @@ export const Button = styled.button`
     border-radius: 8px;
     margin-left: auto;
     margin-top: 25px;
-    background-color: ${props => props.disabled ? 'gray' : '#7695EC'};
-    cursor: ${props => props.disabled ? 'not-allowed' : 'pointer'};
+    background-color: ${props => props.disabledTitle || props.disabledContent ? 'gray' : '#7695EC'};
+    cursor: ${props => props.disabledTitle || props.disabledContent ? 'not-allowed' : 'pointer'};
 
     :hover {
       opacity: 0.6;

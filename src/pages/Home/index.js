@@ -19,12 +19,11 @@ export const Home = () => {
 
   const handleInputChangeTitle = event => {
     setInputValueTitle(event.target.value)
-    setInputValueContent(event.target.value)
   }
   const handleInputChangeContent = event => {
-    setInputValueTitle(event.target.value)
     setInputValueContent(event.target.value)
   }
+  console.log(inputValueTitle, inputValueContent)
 
   useEffect(() => {
     const loadData = () => {
@@ -86,7 +85,7 @@ export const Home = () => {
         {...register("ContentPost")}
         onChange={handleInputChangeContent}
         />
-        <C.Button disabled={!inputValueTitle || !inputValueContent}>Create</C.Button>
+        <C.Button disabledTitle={!inputValueTitle} disabledContent={!inputValueContent}>Create</C.Button>
         </C.Form>
       </C.ContainerPost>
       <Posts username={username}/>
