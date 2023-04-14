@@ -64,7 +64,7 @@ export const Home = () => {
         placeholder='Hello world'
         {...register("TitlePost")}/>
         <label>Content</label>
-        <input 
+        <input
         className='inputContent' 
         placeholder='Content here' 
         {...register("ContentPost")}/>

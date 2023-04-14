@@ -118,3 +118,12 @@ export const Posts = styled.div`
  }
  }
 `
+export const ReadMore = styled.button`
+    background: transparent;
+    border-color: transparent;
+    text-transform: capitalize;
+    color: hsl(205deg 77% 60%);
+    font-size: 1rem;
+    cursor: pointer;
+    padding-left: 0.25rem;
+`
