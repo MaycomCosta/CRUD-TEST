@@ -16,10 +16,12 @@ export const ContainerSocial = styled.div`
  background-color: #FFFFFF;
 
   @media (max-width: 768px) {
-  width: 30rem;
+  width: 100%;
+  overflow: hidden;
  }
  @media (max-width: 480px) {
-  width: 25rem;
+  width: 100%;
+  overflow: hidden;
  }
  .Header {
   background: #7695EC;
