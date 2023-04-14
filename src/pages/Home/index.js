@@ -60,11 +60,13 @@ export const Home = () => {
         <C.Form onSubmit={handleSubmit(onSubmit)}>
         <h3>What's on your mind?</h3>
         <label>Title</label>
-        <input 
+        <input
+        autocomplete="off"
         placeholder='Hello world'
         {...register("TitlePost")}/>
         <label>Content</label>
         <input
+        autocomplete="off"
         className='inputContent' 
         placeholder='Content here' 
         {...register("ContentPost")}/>

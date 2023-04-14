@@ -49,6 +49,7 @@ export const SingUp = () => {
         <h3>Welcome to CodeLeap network!</h3>
         <p>Please enter your username</p>
         <input
+          autocomplete="off"
           {...register("name")}
           placeholder='John doe...'
           type="text" value={inputValue} 

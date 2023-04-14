@@ -21,9 +21,9 @@ export const ModalContent = styled.div`
     background-color: #fff;
     border-radius: 16px;    
     width: 660px;
-    height: 334px;  
+    height: 320px;  
     max-width: 80%;
-    padding: 32px;
+    padding: 1em;
     z-index: 10000;
 
   div {
@@ -73,7 +73,7 @@ export const ModalContent = styled.div`
     border: none;
     font-size: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 20px 0 0 0;
     width: 120px;
     height: 32px;
     border-radius: 8px;
